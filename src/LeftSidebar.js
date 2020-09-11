@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import UploadScreen from './UploadScreen';
 
 
-function Left_sidebar({user}) {
+function LeftSidebar({user}) {
 
     const [uploadOpen, setUploadOpen]= useState(false)
 
@@ -70,4 +70,4 @@ function Left_sidebar({user}) {
     )
 }
 
-export default Left_sidebar
+export default LeftSidebar
