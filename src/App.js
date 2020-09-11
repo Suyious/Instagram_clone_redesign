@@ -73,7 +73,7 @@ function App() {
 
     <div className="App">
       
-      <Navigation user={user} open={open} setOpen={setOpen} signInOpen={signInOpen} setSignInOpen={setSignInOpen} signOut={signOut}>
+      <Navigation open={open} setOpen={setOpen} signOut={signOut}>
         {user? (
                 <button className="button fly" onClick={signOut}>Sign Out</button>
               ):(
@@ -83,15 +83,6 @@ function App() {
               </div>
               )}
       </Navigation>
-      {open && <SignUpScreen 
-                  setOpen={setOpen}
-                  username={username}
-                  setUsername={setUsername}
-                  email={email}
-                  setEmail={setEmail}
-                  password={password}
-                  setPassword={setPassword}
-                  signUp={signUp}/>}
       {signInOpen && <LoginScreen 
                   setSignInOpen={setSignInOpen}
                   username={username}
@@ -101,21 +92,33 @@ function App() {
                   password={password}
                   setPassword={setPassword}
                   signIn={signIn}/>}
+      {open && <SignUpScreen 
+                  setOpen={setOpen}
+                  username={username}
+                  setUsername={setUsername}
+                  email={email}
+                  setEmail={setEmail}
+                  password={password}
+                  setPassword={setPassword}
+                  signUp={signUp}/>}
 
       {/* <UploadScreen/> */}
-      
-      <LeftSidebar user={user} username={username}/>
-      <RightSidebar/>
 
-      <header className="header">
-        <div className="boxwidth">
-          {posts.map(({post, id})=>{
-            return(
-            <Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL}/>
-            )
-          })}
-        </div>
-      </header>
+      <div className="feeds">
+        <LeftSidebar user={user} username={username}/>
+        <RightSidebar/>
+
+        <header className="header">
+          <div className="boxwidth">
+            {posts.map(({post, id})=>{
+              return(
+              <Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL}/>
+              )
+            })}
+          </div>
+        </header>
+      </div>
+      
     </div>
   );
 }
