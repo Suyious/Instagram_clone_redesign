@@ -2,7 +2,7 @@ import React from 'react';
 import instagram from"./instagram.png";
 import "./Navigation.css";
 
-function Navigation({user, open, setOpen, setSignInOpen, signInOpen, signOut}) {
+function Navigation({children, user, open, setOpen, setSignInOpen, signInOpen, signOut}) {
     return (
         <nav>  
         <div className="navigation">
@@ -12,14 +12,7 @@ function Navigation({user, open, setOpen, setSignInOpen, signInOpen, signOut}) {
               <img className="logo_image" src={instagram} alt=""/>
             </a>
 
-            {user? (
-              <button className="button fly" onClick={signOut}>Sign Out</button>
-            ):(
-              <div className="auth_buttons">
-                <button className="button fly" onClick={()=>setOpen(!open)}>Sign Up</button>
-                <button className="button fly" onClick={()=>setSignInOpen(!signInOpen)}>Sign In</button>
-            </div>
-            )}
+          {children}
             
 
             <ul className="nav_items">

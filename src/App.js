@@ -73,7 +73,16 @@ function App() {
 
     <div className="App">
       
-      <Navigation user={user} open={open} setOpen={setOpen} signInOpen={signInOpen} setSignInOpen={setSignInOpen} signOut={signOut}/>
+      <Navigation user={user} open={open} setOpen={setOpen} signInOpen={signInOpen} setSignInOpen={setSignInOpen} signOut={signOut}>
+        {user? (
+                <button className="button fly" onClick={signOut}>Sign Out</button>
+              ):(
+                <div className="auth_buttons">
+                  <button className="button fly" onClick={()=>setOpen(!open)}>Sign Up</button>
+                  <button className="button fly" onClick={()=>setSignInOpen(!signInOpen)}>Sign In</button>
+              </div>
+              )}
+      </Navigation>
       {open && <SignUpScreen 
                   setOpen={setOpen}
                   username={username}
