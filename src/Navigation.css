@@ -1,0 +1,72 @@
+.nav_flex{
+    padding: 1em 1.5em 0.8em 1.35em;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start ;
+    
+  }
+  
+  .navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff; 
+    padding: 2em auto;
+    border-bottom: var(--var-border);
+    z-index: 2;
+  }
+  
+  .nav_logo{
+    display: flex;
+  }
+  
+  .nav_logo svg{
+    width: 32px;
+  }
+  
+  .logo_image{
+    /* width: 100%; */
+    margin: 0.2em 1em 0 1em;
+    object-fit: contain;
+  }
+  
+  
+  .nav_items{
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav_link{
+      margin-left: 2em;
+  }
+  
+  .profile_image img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 50px;
+  }
+
+  .withdot{
+      position: relative;
+  }
+
+  .dot{
+      background: red;
+      color: white;
+      width: 1.2rem;
+      height: 1.2rem;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-align: center;
+      margin: auto;
+      border: 2px solid #FFFFFF;
+      border-radius: 500px;
+      position: absolute;
+      box-sizing: border-box;
+      top: -0.5em;
+      right: -1em;
+  }
+  
