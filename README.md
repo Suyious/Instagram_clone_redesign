@@ -1,4 +1,4 @@
-# Instagram clone with redesigned UI
+# ![Instagram Logo](src\media\Instagram_logo.svg)Instagram clone with redesigned UI
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
