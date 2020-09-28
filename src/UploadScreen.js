@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./LoginScreen.css";
-import { db, storage } from './firebase';
-import firebase from 'firebase'
+// import { db, storage } from './firebase';
+// import firebase from 'firebase'
 
 function UploadScreen({setOpen, username}) {
 
@@ -20,41 +20,12 @@ function UploadScreen({setOpen, username}) {
 
     const handleUpload=(event)=>{
         event.preventDefault();
-        const uploadTask = storage.ref(`images/${image.name}`).put(image);
-        uploadTask.on(
-            "state_changed",
-            (snapshot)=>{
-                const progress = Math.round(
-                    (snapshot.bytesTransferred/snapshot.totalBytes)*100
-                );
-                setProgress(progress);
-            },
-            (error)=>{
-                console.log(error);
-                alert(error.message);
-            },
-            ()=>{
-                storage
-                .ref("images")
-                .child(image.name)
-                .getDownloadURL()
-                .then(url=>{
-                    db.collection("Posts").add({
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                        caption: caption,
-                        imageURL: url,
-                        username: username
-                    });
+            setProgress(0);
+            setCaption('');
+            setImage(null);
+            setOpen(false)
+        }
 
-                    setProgress(0);
-                    setCaption('');
-                    setImage(null);
-                    setOpen(false)
-
-                })
-            }
-        )
-    }
 
     return (
         <div className="screen_page upload_background">

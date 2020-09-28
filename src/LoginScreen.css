@@ -68,6 +68,16 @@
 
 .upload_card{
     margin: 6rem auto;
+    animation: slidein 200ms ease;
+}
+
+@keyframes slidein{
+    from{
+        margin: 0 auto;
+    }
+    to{
+        margin: 6rem auto;
+    }
 }
 
 .upload_image{

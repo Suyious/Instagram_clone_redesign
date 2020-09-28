@@ -1,6 +1,7 @@
 import React from 'react';
 import instagram from"./instagram.png";
 import "./Navigation.css";
+import profile2 from"./media/Profile2.png";
 
 function Navigation({children, user, open, setOpen, setSignInOpen, signInOpen, signOut}) {
     return (
@@ -26,7 +27,8 @@ function Navigation({children, user, open, setOpen, setSignInOpen, signInOpen, s
               </li>
               <li className="nav_link profile_image">
                 <a href="/#">
-                  <img src="https://instagram.fpat3-1.fna.fbcdn.net/v/t51.2885-19/s150x150/84256455_618778842028288_874060672625803264_n.jpg?_nc_ht=instagram.fpat3-1.fna.fbcdn.net&_nc_ohc=Iqr-rSRI-O8AX9rqf7b&oh=9b5e1d6e7684e01af840b439ced66ec7&oe=5F7B176F" alt=""/>
+                  <img src={profile2} alt=""/>
+                  {/* <img src="https://instagram.fpat3-1.fna.fbcdn.net/v/t51.2885-19/s150x150/84256455_618778842028288_874060672625803264_n.jpg?_nc_ht=instagram.fpat3-1.fna.fbcdn.net&_nc_ohc=Iqr-rSRI-O8AX9rqf7b&oh=9b5e1d6e7684e01af840b439ced66ec7&oe=5F7B176F" alt=""/> */}
                 </a>
               </li>
             </ul>
