@@ -10,6 +10,7 @@
 
 .App {
   --var-border: 1px solid #DCDCDC;
+  --accent-blue: rgb(41, 41, 250);
   --light-text:rgba(155, 155, 155, 0.56);
 }
 
