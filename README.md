@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Instagram-ScreenShot](./ScreenShot01.png)
+![Instagram-ScreenShot](./Screenshot01.png)
 
 **Available scripts**
 
