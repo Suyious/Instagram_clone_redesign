@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PopoutMenu from './PopoutMenu';
 import "./Sidebar.css";
 import UploadScreen from './UploadScreen';
-
+import { Link } from "react-router-dom";
 
 function LeftSidebar() {
 
@@ -51,11 +52,26 @@ function LeftSidebar() {
 
                             </p>
                         </li>
-                        <li className="sidebar_item">
+                        <li className="sidebar_item sidebar_more_options">
                             <p className="sidebar_link" >
                             <svg aria-label="More options" class="_8-yf5 " fill="#262626" height="16" viewBox="0 0 48 48" width="16"><circle clip-rule="evenodd" cx="8" cy="24" fill-rule="evenodd" r="4.5"></circle><circle clip-rule="evenodd" cx="24" cy="24" fill-rule="evenodd" r="4.5"></circle><circle clip-rule="evenodd" cx="40" cy="24" fill-rule="evenodd" r="4.5"></circle></svg>
                                 <span className="sidebar_link_text"></span>
                             </p>
+                            <PopoutMenu>
+                                <ul className="popOutMenu_lists">
+                                    <li className="popOutMenu_list">
+                                        <h2>Settings</h2>
+                                    </li>
+                                    <li className="popOutMenu_list">
+                                        <h2>Switch Accounts</h2>
+                                    </li>
+                                    <Link to="/login">
+                                        <li href="" className="popOutMenu_list">
+                                            <h2>Sign Out</h2>
+                                        </li>
+                                    </Link>
+                                </ul>
+                            </PopoutMenu>
                         </li>
                     </ul>
             </div>

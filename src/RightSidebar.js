@@ -16,15 +16,17 @@ import ChatScreen from "./ChatScreen";
 function RightSidebar() {
   const [dmtitles, setDmtitles] = useState([
     { username: "username", title: "Hey How You doin?" },
-    { username: "ducker", title: "Wanna Hang out Buhhh??" },
+    { username: "ducker", title: "Wanna Hang out Bruhhh??" },
     { username: "noone", title: "Hey mofo?" },
     { username: "random", title: "Hey duuudddeee?" },
   ]);
 
   const [chat, setChat] = useState(false);
+  const [chatContent, setChatContent] = useState([])
 
-  const handleChatScreen=()=>{
-    setChat(!chat);
+  const handleChatScreen=(username,title='')=>{
+    setChat(username);
+    setChatContent([title]);
   }
 
   return (
@@ -41,7 +43,7 @@ function RightSidebar() {
         ))}
       </div>
       {chat && 
-        <ChatScreen handleChatScreen={handleChatScreen}/>
+        <ChatScreen setChatContent={setChatContent} chatContent={chatContent} chat={chat} handleChatScreen={handleChatScreen}/>
       }
     </div>
   );

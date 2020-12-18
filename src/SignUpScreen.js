@@ -1,6 +1,7 @@
 import React from 'react';
 import "./LoginScreen.css"
 import instagram from"./instagram.png";
+import { Link } from "react-router-dom";
 
 function SignUpScreen({setOpen, username, setUsername, email, setEmail, password, setPassword, signUp}) {
     return (
@@ -14,6 +15,7 @@ function SignUpScreen({setOpen, username, setUsername, email, setEmail, password
                     <button className="button button_signup" onClick={signUp}>Sign up</button>
                     <button className="button button_cancel" onClick={()=>setOpen(false)}>Cancel</button>
                 </form>
+                <p className="authtoggle">Already have an account? <Link className="authtoggle_link" to="/login">Login</Link></p>
             </div>
             
         </div>

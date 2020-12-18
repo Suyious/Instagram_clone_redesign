@@ -5,7 +5,7 @@ import profile1 from "./media/Profile1.png";
 function DirectMessages({ username, title, setChat, chat, handleChatScreen }) {
 
   return (
-    <div className="profile_image profile_image_margin" onClick={handleChatScreen} >
+    <div className="profile_image profile_image_margin" onClick={()=>handleChatScreen(username, title)} >
       <Messagecard username={username} title={title} />
       <img src={profile1} alt="" />
     </div>
