@@ -76,13 +76,14 @@
   }
 
   .post input[type=text]{
-      width: 100%; 
+      width: 100%;
+      padding: 1.5em 4em 1.5em 1em; 
   }
 
   .post button{
       padding: 1.5em 1em;
       background: transparent;
-      color: rgb(41, 41, 250);
+      color: var(--accent-blue);
       position: absolute;
       right: 0;
   }

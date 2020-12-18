@@ -1,11 +1,22 @@
-import React from 'react';
-import "./Post.css"
+import React, { useState } from 'react';
+import "./Post.css";
+import profile2 from"./media/Profile2.png";
 
 function Post({username, imageURL , caption}) {
+    
+    const [comments, setComments]= useState([{username: 'randomguy', comment: 'hey'}])
+    const [comment, setComment]= useState('')
+
+    const handleComment=event=>{
+        event.preventDefault();
+        setComments([...comments, {username, comment}])
+        setComment('');
+    }
+
     return (
         <div className="post">
             <div className="post_head">
-                <img classname="profile_image" src="https://instagram.fpat3-1.fna.fbcdn.net/v/t51.2885-19/s150x150/84256455_618778842028288_874060672625803264_n.jpg?_nc_ht=instagram.fpat3-1.fna.fbcdn.net&_nc_ohc=Iqr-rSRI-O8AX9rqf7b&oh=9b5e1d6e7684e01af840b439ced66ec7&oe=5F7B176F" alt=""/>
+                <img classname="profile_image" src={profile2} alt=""/>
                 <div>
                     <h2>{username}</h2>
                     <h2><span>Mumbai, Maharashtra</span></h2>
@@ -29,11 +40,14 @@ function Post({username, imageURL , caption}) {
                 <h2>16k likes</h2>
                 <h2 className="caption">{username} <span>{caption}</span></h2>
                 <h3 className="post_time">1 HOUR AGO</h3>    
+                {comments.map(comment=>(
+                    <h2 className="caption">{comment.username} <span>{comment.comment}</span></h2>
+                ))}
             </div>
             
             <form action="">
-                <input type="text" placeholder="Add a comment..."/>
-                <button disabled >Post</button>
+                <input type="text" placeholder="Add a comment..." value={comment} onChange={e=>setComment(e.target.value)}/>
+                <button onClick={handleComment} disabled={!comment} >Post</button>
             </form>
             
         </div>

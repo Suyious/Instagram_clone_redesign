@@ -14,7 +14,7 @@
     background: #fff; 
     padding: 2em auto;
     border-bottom: var(--var-border);
-    z-index: 2;
+    z-index: 5;
   }
   
   .nav_logo{
