@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Instagram-ScreenShot](./ScreenShot01.png)
+
 **Available scripts**
 
 `npm start` : Runs the app in the development mode.<br>
